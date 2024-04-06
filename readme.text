@@ -1,66 +1,47 @@
-# Elderly Assistance Web Application
+# WisdomSupport Web Application
 
-This is a Django web application designed to assist elderly individuals with managing their medications, emergency contacts, financial transactions, and requesting assistance in case of emergencies. The application provides a user-friendly interface for managing these aspects of their daily lives, aiming to improve their quality of life and safety.
+This web application is designed to assist elderly individuals in managing their medication, emergency contacts, financial transactions, and requesting assistance in case of emergencies.
 
 ## Features
+- *Manage Medications:* View, add, edit, or delete medications.
+- *Emergency Contacts:* View, add, edit, or delete emergency contacts.
+- *Financial Management:* View financial transactions and add, edit, or delete transactions.
+- *Request Assistance:* Request assistance in case of emergencies by filling out a form with a message describing the emergency.
 
-1. *Medication Management*: Users can add, edit, and delete medications, including the name, dosage, frequency, and time of day.
+## Technologies Used
+- Python
+- Django
+- HTML
+- CSS
+- Bootstrap (for styling)
 
-2. *Emergency Contact Management*: Users can add, edit, and delete emergency contacts, including the name and phone number.
-
-3. *Financial Transaction Management*: Users can track their financial transactions, including expenses, bills, and income. They can add, edit, and delete transactions, including the type, amount, and date.
-
-4. *Emergency Assistance Request*: Users can request assistance in case of emergencies by filling out a form with a message describing the emergency. This feature is designed to notify caregivers or emergency services.
-
-## Installation
-
+## How to Run
 1. Clone the repository:
-   sh
-   git clone https://github.com/MeenaManoj/KratinLLC.git
-   
+git clone https://github.com/MeenaManoj/KratinLLC
 
-2. Navigate to the project directory:
-   sh
-   cd WisdomSupport
-   
+Install the required dependencies:
 
-3. Install the required dependencies:
-   sh
-   pip install -r requirements.txt
-   
-
-4. Apply database migrations:
-   sh
-   python manage.py migrate
-   
-
-5. Run the development server:
-   sh
-   python manage.py runserver
-   
-
-6. Access the application in your web browser at http://localhost:8000.
+cd elderly-assistance
+pip install -r requirements.txt
 
 
-7. you can go home page by using http://localhost:8000/WisdomSupport/home
+Apply database migrations:
+python manage.py migrate
 
-8. dear team all  the ideas converted into code all the forentend and backend connected to each other i you want to go any page then first youngo home then you will click that page....
-and thanks for giveing me this task i really enjoyed that ia any issue in this please let me know throuh this mail=manoj.meena13
+Create a superuser (admin) to access the admin panel:
+python manage.py createsuperuser
 
-
-## Usage
-
-1. *Medication Management*:
-   - Click on "Medications" in the navigation menu to view, add, edit, or delete medications.
-
-2. *Emergency Contact Management*:
-   - Click on "Emergency Contacts" in the navigation menu to view, add, edit, or delete emergency contacts.
-
-3. *Financial Transaction Management*:
-   - Click on "Financial Management" in the navigation menu to view, add, edit, or delete financial transactions.
-
-4. *Emergency Assistance Request*:
-   - Click on "Request Assistance" in the navigation menu to request assistance in case of emergencies by filling out a form with a message describing the emergency.
+Run the development server:
+python manage.py runserver
 
 
----
+Access the application in your web browser at http://127.0.0.1:8000/.
+
+To access the admin panel, go to http://127.0.0.1:8000/admin/ and log in with the superuser credentials created in step 4.
+
+You can now use the application to manage medications, emergency contacts, financial transactions, and request assistance.
+
+## Note
+- Make sure to configure the DATABASES setting in your Django project's settings file (settings.py) to use an appropriate database (e.g., SQLite for development).
+
+For any questions or issues, please contact Manoj Meena at manoj.meena1316@gmail.com o
