@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Assistance</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Elderly Assistance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'medication_list' %}">Medications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'emergency_contacts' %}">Emergency Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Financial Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Request Assistance</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Request Assistance</h1>
+        <p>Click on "Request Assistance" in the navigation menu to request assistance in case of emergencies by filling out the form below with a message describing the emergency.</p>
+        
+        <h2>Emergency Request Form</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+            <button type="submit">Request Assistance</button>
+        </form>
+    </div>
+</body>
+</html>

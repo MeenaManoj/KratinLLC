@@ -1,0 +1,66 @@
+# Elderly Assistance Web Application
+
+This is a Django web application designed to assist elderly individuals with managing their medications, emergency contacts, financial transactions, and requesting assistance in case of emergencies. The application provides a user-friendly interface for managing these aspects of their daily lives, aiming to improve their quality of life and safety.
+
+## Features
+
+1. *Medication Management*: Users can add, edit, and delete medications, including the name, dosage, frequency, and time of day.
+
+2. *Emergency Contact Management*: Users can add, edit, and delete emergency contacts, including the name and phone number.
+
+3. *Financial Transaction Management*: Users can track their financial transactions, including expenses, bills, and income. They can add, edit, and delete transactions, including the type, amount, and date.
+
+4. *Emergency Assistance Request*: Users can request assistance in case of emergencies by filling out a form with a message describing the emergency. This feature is designed to notify caregivers or emergency services.
+
+## Installation
+
+1. Clone the repository:
+   sh
+   git clone https://github.com/MeenaManoj/KratinLLC.git
+   
+
+2. Navigate to the project directory:
+   sh
+   cd WisdomSupport
+   
+
+3. Install the required dependencies:
+   sh
+   pip install -r requirements.txt
+   
+
+4. Apply database migrations:
+   sh
+   python manage.py migrate
+   
+
+5. Run the development server:
+   sh
+   python manage.py runserver
+   
+
+6. Access the application in your web browser at http://localhost:8000.
+
+
+7. you can go home page by using http://localhost:8000/WisdomSupport/home
+
+8. dear team all  the ideas converted into code all the forentend and backend connected to each other i you want to go any page then first youngo home then you will click that page....
+and thanks for giveing me this task i really enjoyed that ia any issue in this please let me know throuh this mail=manoj.meena13
+
+
+## Usage
+
+1. *Medication Management*:
+   - Click on "Medications" in the navigation menu to view, add, edit, or delete medications.
+
+2. *Emergency Contact Management*:
+   - Click on "Emergency Contacts" in the navigation menu to view, add, edit, or delete emergency contacts.
+
+3. *Financial Transaction Management*:
+   - Click on "Financial Management" in the navigation menu to view, add, edit, or delete financial transactions.
+
+4. *Emergency Assistance Request*:
+   - Click on "Request Assistance" in the navigation menu to request assistance in case of emergencies by filling out a form with a message describing the emergency.
+
+
+---

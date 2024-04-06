@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Medications</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Elderly Assistance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Medications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'emergency_contacts' %}">Emergency Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Financial Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Request Assistance</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Manage Medications</h1>
+        <h2>Medication List</h2>
+        <ul>
+            {% for medication in medications %}
+                <li>{{ medication.name }} - Dosage: {{ medication.dosage }}, Frequency: {{ medication.frequency }}, Time of Day: {{ medication.time_of_day }}</li>
+            {% empty %}
+                <li>No medications found</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Add Medication</h2>
+        {% comment %} <form method="post"> {% endcomment %}
+        <form method="post" action="{% url 'add_medication' %}">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="dosage">Dosage:</label>
+            <input type="text" id="dosage" name="dosage" required><br>
+            <label for="frequency">Frequency:</label>
+            <input type="text" id="frequency" name="frequency" required><br>
+            <label for="time_of_day">Time of Day:</label>
+            <input type="time" id="time_of_day" name="time_of_day" required><br>
+            <button type="submit">Add Medication</button>
+        </form>
+
+        <h2>Edit Medication</h2>
+       
+            <form method="post" action="{% url 'edit_medication' 'paracita1'%}">
+                {% csrf_token %}
+                <label for="new_name">New Name:</label>
+                <input type="text" id="new_name" name="name" value="{{ Medication.name }}"><br>
+                <label for="new_dosage">New Dosage:</label>
+                <input type="text" id="new_dosage" name="dosage" value="{{ Medication.dosage }}"><br>
+                <label for="new_frequency">New Frequency:</label>
+                <input type="text" id="new_frequency" name="frequency" value="{{ Medication.frequency }}"><br>
+                <label for="new_time_of_day">New Time of Day:</label>
+                <input type="time" id="new_time_of_day" name="time_of_day" value="{{ Medication.time_of_day }}"><br>
+                <button type="submit">Edit Medication</button>
+            </form>
+        
+        
+
+        <form method="post" action="{% url 'delete_medication' %}">
+            {% csrf_token %}
+            <select name="medication_id">
+                {% for medication in medications %}
+                    <option value="{{ medication.name }}">{{ medication.name }}</option>
+                {% endfor %}
+            </select><br>
+            <button type="submit">Delete Medication</button>
+        </form>
+        
+        
+    </div>
+</body>
+</html>
