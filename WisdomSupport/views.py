@@ -107,6 +107,7 @@ def add_emergency_contacts(request):
 def delete_emergency_contacts(request):
     if request.method == 'POST':
         emergency_contacts_name = request.POST.get('contact_id')
+        print(emergency_contacts_name)
         medications = EmergencyContact.objects.filter(name=emergency_contacts_name)
         medications.delete()
         return JsonResponse({"result":"delete data successfully"})
